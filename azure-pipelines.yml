@@ -6,13 +6,17 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 
 pool:
   vmImage: 'ubuntu-latest'
-jobs:
--job:'Job1'
-  steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+stages:
+  - stage: Build
+    jobs:
+      - job: JobOne
+        steps:
+        - script: echo Hello, world!
+          displayName: 'Run a one-line script'
 
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
+        - script: |
+            echo Add other tasks to build, test, and deploy your project.
+            echo See https://aka.ms/yaml
+          displayName: 'Run a multi-line script'
+  
+  - stage: deploy
