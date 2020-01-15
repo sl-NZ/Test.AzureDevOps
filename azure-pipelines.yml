@@ -6,7 +6,22 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 
 pool:
   vmImage: 'ubuntu-latest'
+
 stages:
+
+  - stage: Lint
+    dependsOn: "Linting and Readiness Check"
+    jobs:
+      - job: Validate
+        displayName: "Terraform Validate"
+        steps:
+        - checkout: self
+        - script: |
+            terraform vlaidate -check-variables=false
+          workingDirectory: '$(TFPath)'
+          displayName: 'Terraform Validate'
+
+      
   - stage: Build
     jobs:
       - job: JobOne
@@ -31,3 +46,6 @@ stages:
               Write-Host "Hello World"
 
 trigger: none
+variables:
+  -name: TFPATH
+    value:'/terraform'
