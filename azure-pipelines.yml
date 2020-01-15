@@ -13,11 +13,6 @@ stages:
         steps:
           - script: echo Hello, world!
             displayName: 'Run a one-line script'
-            
-          - script: |
-              Write-Host Add other tasks to build, test, and deploy your project.
-              Write-Host See https://aka.ms/yaml
-            displayName: 'Run a multi-line script'
           - task: CopyFiles@2
             displayName: "Copy Terraform Files"
             inputs:
@@ -25,7 +20,6 @@ stages:
               Contents: '**'
               TargetFolder: '$(build.artifactstagingdirectory)/drop-terraform'
               
-
   - stage: deploy
     jobs:
       - job: JobTwo
@@ -34,8 +28,6 @@ stages:
           inputs:
             targetType: 'inline'
             script: |
-              # Write your PowerShell commands here.
               Write-Host "Hello World"
-
 
 trigger: none
