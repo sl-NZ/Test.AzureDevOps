@@ -8,9 +8,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-
   - stage: Lint
-    dependsOn: "Linting and Readiness Check"
+    displayName: 'Linting and Readiness Check'
     jobs:
       - job: Validate
         displayName: "Terraform Validate"
