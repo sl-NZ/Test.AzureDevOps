@@ -21,10 +21,10 @@ stages:
           - task: CopyFiles@2
             displayName: "Copy Terraform Files"
             inputs:
-              SourceFolder: '/terraform'
+              SourceFolder: 'terraform'
               Contents: '**'
-              TargetFolder: '$(build.artifactstagingdirectory)'
-
+              TargetFolder: '$(build.artifactstagingdirectory)/drop-terraform'
+              
 
   - stage: deploy
     jobs:
