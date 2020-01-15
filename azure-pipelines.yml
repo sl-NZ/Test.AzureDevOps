@@ -47,4 +47,4 @@ stages:
 trigger: none
 variables:
   -name: TFPATH
-    value:'/terraform'
+    value:'terraform'
