@@ -37,6 +37,7 @@ resource "azurerm_app_service" "app_supplier_api_prod" {
   https_only = true
   
   auth_settings{
+    enabled = true
     runtime_version = "2.2"
   }
 
