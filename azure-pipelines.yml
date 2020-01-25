@@ -20,7 +20,7 @@ stages:
         displayName: "Terraform Validate"
         steps:
         - script: |
-            terraform vlaidate -check-variables=false
+            Write-Host '$(build.sourcesDirectory)/terraform'
           workingDirectory: '$(build.sourcesDirectory)/terraform'
           displayName: 'Terraform Validate'
           
