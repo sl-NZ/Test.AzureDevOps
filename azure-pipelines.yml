@@ -20,8 +20,7 @@ stages:
         displayName: "Terraform Validate"
         steps:
         - script: |
-            Write-Host '$(build.sourcesDirectory)/terraform'
-          workingDirectory: '$(build.sourcesDirectory)/terraform'
+            ls
           displayName: 'Terraform Validate'
           
       
