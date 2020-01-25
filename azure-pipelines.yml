@@ -4,6 +4,11 @@
 #Pipeline Name
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
+trigger: none
+variables:
+  -name: TFPath
+    value:'terraform'
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -42,8 +47,3 @@ stages:
             targetType: 'inline'
             script: |
               Write-Host "Hello World"
-
-trigger: none
-variables:
-  -name: TFPath
-    value:'terraform'
