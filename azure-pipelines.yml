@@ -21,7 +21,7 @@ stages:
         steps:
         - script: |
             terraform vlaidate -check-variables=false
-          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+          workingDirectory: '$(Agent.TempDirectory)/terraform'
           displayName: 'Terraform Validate'
           
       
