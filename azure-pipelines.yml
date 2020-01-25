@@ -17,7 +17,7 @@ stages:
         - checkout: self
         - script: |
             terraform vlaidate -check-variables=false
-          workingDirectory: '$(TFPath)'
+          workingDirectory: 'terraform'
           displayName: 'Terraform Validate'
 
       
@@ -47,4 +47,4 @@ stages:
 trigger: none
 variables:
   -name: TFPath
-    value:'/terraform'
+    value:'terraform'
