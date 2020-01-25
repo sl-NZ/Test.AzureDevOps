@@ -14,10 +14,9 @@ stages:
       - job: Validate
         displayName: "Terraform Validate"
         steps:
-        - checkout: self
         - script: |
             terraform vlaidate -check-variables=false
-          workingDirectory: 'terraform/'
+          workingDirectory: terraform
           displayName: 'Terraform Validate'
 
       
