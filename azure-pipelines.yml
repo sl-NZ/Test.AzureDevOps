@@ -20,7 +20,7 @@ stages:
         displayName: "Terraform Validate"
         steps:
         - script: |
-            ls
+            Get-ChildItem
           displayName: 'Terraform Validate'
           
       
