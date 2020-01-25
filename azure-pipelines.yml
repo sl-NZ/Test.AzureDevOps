@@ -17,7 +17,7 @@ stages:
         - checkout: self
         - script: |
             terraform vlaidate -check-variables=false
-          workingDirectory: 'terraform'
+          workingDirectory: 'terraform/'
           displayName: 'Terraform Validate'
 
       
