@@ -16,9 +16,9 @@ stages:
         steps:
         - script: |
             terraform vlaidate -check-variables=false
-          workingDirectory: terraform/
+          workingDirectory: '$(Build.SourcesDirectory)/$TFPath'
           displayName: 'Terraform Validate'
-
+          
       
   - stage: Build
     jobs:
