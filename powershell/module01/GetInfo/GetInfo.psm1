@@ -2,4 +2,7 @@ function Get-Info {
     param($ComputerName)
     Get-WmiObject -ComputerName $ComputerName -Class Win32_BIOS
 }
-Export-ModuleMember -Function 'GetInfo'
+Function Get-Hello {
+    Write-Host "Hello from my Azure DevOps Services Package."
+}
+
